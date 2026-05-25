@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+}
+body {
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, sans-serif;
+  background-color: #faf7f2;
+  color: #0f172a;
+}
+
+.arabic {
+  font-family: 'Amiri Quran', 'Scheherazade New', 'Noto Naskh Arabic', serif;
+  direction: rtl;
+  line-height: 2.4;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 font-medium
+           transition disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary { @apply btn bg-mosque text-white hover:bg-emerald-800; }
+  .btn-ghost   { @apply btn bg-white border border-slate-200 text-ink hover:bg-slate-50; }
+  .btn-danger  { @apply btn bg-red-600 text-white hover:bg-red-700; }
+  .card {
+    @apply bg-white rounded-2xl border border-slate-200 shadow-sm p-5;
+  }
+  .input {
+    @apply w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm
+           focus:border-mosque focus:ring-2 focus:ring-mosque/30 focus:outline-none;
+  }
+  .label { @apply text-sm font-medium text-slate-700; }
+  .pill  { @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium; }
+}
